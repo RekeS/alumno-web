@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html
+	  xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+<head>
+<meta charset="UTF-8"></meta>
+<title>Insert title here</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"></link>
+<STYLE type="text/css">
+	.cont-alumno{
+		border:1px solid silver;
+		padding:10px;
+		margin-bottom: 10px;
+	}
+</STYLE>
+</head>
+<body>
+	<div class="container-fluid" >
+	
+		<div class="row" >
+			<div class="col-md-6" >
+				<h1>Alumnos</h1>
+			</div>
+			<div class="col-md-6" >
+				<h:form>
+					<h:commandButton action="#{listaAlumnoControlador.ordenar}" value="Ordenar" styleClass="btn btn-default" ></h:commandButton>
+				</h:form>
+			</div>
+		</div>
+		<div class="row" >
+			
+			<ui:repeat var="alumno" value="#{listaAlumnoControlador.alumnos}">
+				
+				<div class="col-md-3" >
+					<div class="cont-alumno" >
+						<img class="img-responsive" src="https://static.vix.com/es/sites/default/files/imj/entrepadres/l/lograr-que-mi-hijo-sea-alumno-10-11.jpg"/>
+						<h1>#{alumno.nombre}</h1>
+						<p>
+							#{alumno.apellido} #{alumno.apellidoMaterno}
+							<br/>
+						</p>
+						<h4>#{alumno.edad}</h4>
+					</div>
+				</div>
+			
+			</ui:repeat>
+			
+		</div>
+	</div>
+</body>
+</html>

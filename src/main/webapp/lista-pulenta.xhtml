@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+<head>
+<meta charset="ISO-8859-1" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+	integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+	crossorigin="anonymous" />
+<STYLE type="text/css">
+.cont-alumno {
+	border: 1px solid silver;
+	padding: 10px;
+	margin-bottom: 10px;
+	margin: 10px;
+}
+
+
+</STYLE>
+<title>Insert title here</title>
+</head>
+<body>
+	<DIV class="conteiner-fluid">
+		<DIV class="row">
+			<DIV class="col-md-6">
+				<H1>Alumnos</H1>
+			</DIV>
+			<DIV class="col-md-6">
+				<h:form>
+					<h:commandButton action="#{listaAlumnoCtrl.ordenar}"
+						value="Ordenar" styleClass="btn btn-default pull-right"></h:commandButton>
+					<h:commandButton action="principal.xhtml" value="Volver"
+						styleClass="btn btn-default pull-right "></h:commandButton>
+				</h:form>
+			</DIV>
+		</DIV>
+		<DIV class="row">
+			<ui:repeat var="alumno" value="#{listaAlumnoCtrl.alumnos}">
+				<div class="col-md-4 ">
+					<div class="cont-alumno">
+						<IMG alt="" class="img-responsive" src="img/imagen1.jpg" />
+						<H3>#{alumno.nombre}</H3>
+						<P>#{alumno.apellido} #{alumno.apellidoMaterno}</P>
+						<HR />
+						<H5>#{alumno.edad}</H5>
+					</div>
+				</div>
+			</ui:repeat>
+		</DIV>
+	</DIV>
+</body>
+</html>

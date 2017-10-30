@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+<head>
+<meta charset="ISO-8859-1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+	integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+	crossorigin="anonymous" />
+<title>El Alumno belico</title>
+</head>
+<body>
+	<div class="container-fluid ">
+		<DIV class="row">
+			<DIV class="col-md-4 col-md-offset-4 "
+				style="border: 1px solid black">
+				<H3>Ingresar Alumno</H3>
+				<HR />
+				<h:form>
+					<div class="form-group">
+						<label>Id</label> <h:inputText
+							 styleClass="form-control" value="#{alumnoControlador.id}" ></h:inputText>
+					</div>
+					<div class="form-group">
+						<label>Nombre</label> <h:inputText
+							 styleClass="form-control" value="#{alumnoControlador.nombre}" ></h:inputText>
+					</div>
+					<div class="form-group">
+						<label>Apellido Paterno</label> <h:inputText
+							 styleClass="form-control" value="#{alumnoControlador.apellidoPaterno}" ></h:inputText>
+					</div>
+					<div class="form-group">
+						<label>Apellido Materno</label> <h:inputText
+							 styleClass="form-control" value="#{alumnoControlador.apellidoMaterno}" ></h:inputText>
+					</div>
+					<div class="form-group">
+						<label>Edad</label> <h:inputText
+							 styleClass="form-control" value="#{alumnoControlador.edad}" ></h:inputText>
+					</div>
+					<div class="form-group">
+						<h:commandButton styleClass="btn btn-primary btn-block "  action="#{alumnoControlador.guardar}" value="Guardar"></h:commandButton>
+						
+					</div>
+					<div class="form-group">
+						<h:commandButton styleClass="btn btn-default btn-block "  action="#{alumnoControlador.limpiar}" value="Limpiar"></h:commandButton>
+						
+					</div>
+					<div class="form-group">
+						<h:commandButton styleClass="btn btn-default btn-block "  action="principal.xhtml" value="Volver"></h:commandButton>
+						
+					</div>
+				</h:form>
+			</DIV>
+		</DIV>
+	</div>
+</body>
+</html>

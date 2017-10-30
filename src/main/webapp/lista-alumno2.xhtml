@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+<head>
+<title>hola mundo</title>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+	integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+	crossorigin="anonymous"></link>
+
+<style type="text/css">
+.barra-lateral {
+	position: fixed;
+	top: 50px;
+	bottom: 0;
+	padding: 0px;
+	padding-top: 20px;
+	background-color: #ebebeb;
+	border-right: 1px solid silver;
+}
+
+.contenedor-principal {
+	margin-top: 50px;
+}
+</style>
+</head>
+<body>
+	<ui:include src="/WEB-INF/barraSuperior.xhtml"></ui:include>
+	<div class="container-fluid">
+		<div class="row">
+			<ui:include src="/WEB-INF/barraLateral.xhtml"></ui:include>
+			<div class="col-xs-12 col-sm-10 col-sm-offset-2 contenedor-principal">
+				<DIV class="conteiner-fluid">
+		<DIV class="row">
+			<DIV class="col-md-6">
+				<H1>Alumnos</H1>
+			</DIV>
+			<DIV class="col-md-6">
+				<h:form>
+					<h:commandButton action="#{listaAlumnoCtrl.ordenar}"
+						value="Ordenar" styleClass="btn btn-default pull-right"></h:commandButton>
+				
+				</h:form>
+			</DIV>
+		</DIV>
+		<DIV class="row">
+			<ui:repeat var="alumno" value="#{listaAlumnoCtrl.alumnos}">
+				<div class="col-md-4 ">
+					<div class="cont-alumno">
+						<IMG alt="" class="img-responsive" src="img/imagen1.jpg" />
+						<H3>#{alumno.nombre}</H3>
+						<P>#{alumno.apellido} #{alumno.apellidoMaterno}</P>
+						<HR />
+						<H5>#{alumno.edad}</H5>
+					</div>
+				</div>
+			</ui:repeat>
+		</DIV>
+	</DIV>
+			</div>
+		</div>
+
+	</div>
+
+	<script
+		src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script
+		src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+		integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+		crossorigin="anonymous"></script>
+
+
+</body>
+</html>
